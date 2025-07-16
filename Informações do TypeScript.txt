@@ -1,0 +1,46 @@
+//Tipos primitivos de valores nas variáveis----------------------------
+let valor: number = 3000;
+let nome: string = ""
+let isPago: boolean = false;
+
+let qualquer: any = "";
+qualquer = 23;
+
+//Arrays----------------------------------------------------------------
+//Array do tipo any aceita qualquer tipo
+const lista = [];
+lista.push("Dionas", "Cachorro", "23", true, []);
+//Array do tipo number
+const listaDeNumeros: number[] = [];
+listaDeNumeros.push(13, 23);
+//Array do tipo string
+const listaDeStrings: string[] = [];
+listaDeStrings.push("Texto", "Mais um texto");
+
+//Tipos personalizados (Type Alias)-------------------------------------
+//Declara o tipo personalizado
+type Transacao = {
+    tipoTransacao: TipoTransacao;
+    data: Date;
+    valor: number;
+}
+
+
+//Enum ----------------------------------------------------------------
+//Define um conjunto de valores fixos que poderão ser usados
+enum TipoTransacao {
+    DEPOSITO = "Depósito",
+    TRANSFERENCIA = "Transferência",
+    PAGAMENTO_BOLETO = "Pagamento de Boleto"
+}
+
+//Aplica o tipo personalizado
+const novaTransacao: Transacao = {
+    tipoTransacao: TipoTransacao.DEPOSITO,
+    data: new Date(),
+    valor: 0
+}
+
+console.log(novaTransacao);
+
+
